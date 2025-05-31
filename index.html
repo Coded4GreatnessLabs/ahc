@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coach Access</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .wrapper {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #444;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #launchButton {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Coach Nefari Nyx</h1>
+    <p>Welcome to your private coaching session. Tap below when you&#39;re ready to launch.</p>
+    <div id="passwordBlock">
+      <input type="password" id="pw" placeholder="Enter password" />
+      <br/>
+      <button onclick="checkPW()">Unlock</button>
+    </div>
+    <div id="launchButton">
+      <button onclick="window.open(&#39;https://chatgpt.com/g/g-67f3252f797c81918d518a53994d37e4-mozimode&#39;, &#39;_blank&#39;)">Launch AI Coach</button>
+    </div>
+  </div>
+
+  <script>
+    function checkPW() {
+      const correct = "letmein"; // <- change this password if you want
+      const entered = document.getElementById("pw").value;
+      if (entered === correct) {
+        document.getElementById("passwordBlock").style.display = "none";
+        document.getElementById("launchButton").style.display = "block";
+      } else {
+        alert("Nah, that ain&#39;t it. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
